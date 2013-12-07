@@ -6,7 +6,7 @@
 # catalog-version 0.1
 Name:		texlive-tikz-inet
 Version:	0.1
-Release:	2
+Release:	3
 Summary:	Draw interaction nets with TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/tikz-inet
