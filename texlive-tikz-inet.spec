@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /graphics/pgf/contrib/tikz-inet
-# catalog-date 2008-08-24 14:43:48 +0200
-# catalog-license lppl
-# catalog-version 0.1
 Name:		texlive-tikz-inet
-Version:	0.1
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Draw interaction nets with TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pgf/contrib/tikz-inet
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-inet.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-inet.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-inet.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tikz-inet.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -22,12 +16,12 @@ Requires(post):	texlive-kpathsea
 The package extends TikZ with macros to draw interaction nets.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -38,23 +32,10 @@ The package extends TikZ with macros to draw interaction nets.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 0.1-2
-+ Revision: 756902
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 0.1-1
-+ Revision: 719744
-- texlive-tikz-inet
-- texlive-tikz-inet
-- texlive-tikz-inet
-
